@@ -1,0 +1,13 @@
+spring:
+    security:
+        user:
+            name: admin
+            password: g6p8
+            roles: ADMIN,USER
+    h2:
+        console:
+            enabled: true
+            path: /h2-console
+            settings:
+                trace: false
+                web-allow-others: true

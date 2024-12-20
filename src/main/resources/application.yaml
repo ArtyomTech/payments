@@ -1,0 +1,51 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+
+spring:
+    application:
+        name: springboot-start-project
+        console:
+            enabled: true
+    main:
+        banner-mode: "console"
+    datasource:
+        url: jdbc:h2:file:./target/local;DB_CLOSE_ON_EXIT=FALSE
+        driverClassName: org.h2.Driver
+        username: sa
+        password:
+        hikari:
+            maximum-pool-size: 10
+            minimum-idle: 5
+            connection-timeout: 30000
+            idle-timeout: 600000
+            max-lifetime: 1800000
+    h2:
+        console:
+            enabled: true
+    jpa:
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+                id:
+                    new_generator_mappings: false
+                format_sql: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health, info
+    endpoint:
+        info:
+            enabled: true
+
+springdoc:
+    show-actuator: true
+    api-docs:
+        version: openapi_3_1
+    enable-groovy: true
