@@ -9,4 +9,8 @@
         <sqlFile path="schema.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="2" author="artyom-a">
+        <sqlFile path="insert-accounts.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
